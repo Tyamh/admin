@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Protected Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+</head>
+<body>
+    <div class="window cheater-page" id="cheaterPage">
+        <div class="window-titlebar">
+            <span class="title">Cheater Page</span>
+            <div class="buttons">
+                <button>-</button>
+                <button>[]</button>
+                <button>X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="message">cheater, don't ruin the fun for others!</div>
+        </div>
+    </div>
+
+    <div class="window loading-screen" id="loadingScreen">
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <div class="window main-menu" id="mainMenu">
+        <div class="window-titlebar">
+            <span class="title">Main Menu</span>
+            <div class="buttons">
+                <button>-</button>
+                <button>[]</button>
+                <button>X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <button class="menu-item" onclick="startGame()">Open OS</button>
+            <button class="menu-item">Options</button>
+            <button class="menu-item">Exit</button>
+        </div>
+    </div>
+
+    <div class="os-loading-screen" id="osLoadingScreen">
+        TyamhOS
+    </div>
+
+    <div class="desktop" id="desktop">
+        <div class="folder" ondblclick="openFolderWindow()">
+            <div class="folder-label">KERNAL EDITOR</div>
+        </div>
+        <div class="taskbar">
+            <button class="start-button">Start</button>
+            <div class="time" id="time"></div>
+        </div>
+    </div>
+
+    <div class="window" id="folderWindow">
+        <div class="window-titlebar">
+            <span class="title">KERNAL EDITOR</span>
+            <div class="buttons">
+                <button onclick="minimizeWindow('folderWindow')">-</button>
+                <button onclick="maximizeWindow('folderWindow')">[]</button>
+                <button onclick="closeWindow('folderWindow')">X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="file" ondblclick="openNotepad()">Nothing special</div>
+            <div class="file" ondblclick="openBSOD()">do not open <span class="file-size">239 344 848 846 924 975 827 kb</span></div>
+        </div>
+    </div>
+
+    <div class="window" id="notepadWindow">
+        <div class="window-titlebar">
+            <span class="title">Notepad</span>
+            <div class="buttons">
+                <button onclick="minimizeWindow('notepadWindow')">-</button>
+                <button onclick="maximizeWindow('notepadWindow')">[]</button>
+                <button onclick="closeWindow('notepadWindow')">X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <p>HAHA!</p>
+        </div>
+    </div>
+
+    <div id="bsodWindow" class="fullscreen">
+        <div class="window-content bsod">
+            <h1>:(</h1>
+            <p>Your PC ran into a problem and needs to restart. We're just collecting some error info, and then we'll restart for you.</p>
+            <p>If you'd like to know more, you can search online later for this error: KERNEL_SECURITY_CHECK_FAILURE</p>
+        </div>
+    </div>
+</body>
+</html>

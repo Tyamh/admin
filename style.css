@@ -1,0 +1,234 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Tahoma', sans-serif;
+    background-color: #3A6EA5;
+    color: #000;
+}
+
+.window {
+    width: 400px;
+    border: 2px solid #000;
+    background-color: #E1E1E1;
+    box-shadow: 2px 2px 0 #808080;
+    position: absolute;
+    transition: opacity 0.5s;
+}
+
+.window-titlebar {
+    background-color: #0A246A;
+    color: #fff;
+    padding: 2px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    cursor: move;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
+}
+
+.window-titlebar .title {
+    margin: 0;
+}
+
+.window-titlebar .buttons {
+    display: flex;
+}
+
+.window-titlebar .buttons button {
+    background-color: #C0C0C0;
+    border: 1px solid #808080;
+    width: 16px;
+    height: 16px;
+    margin-left: 2px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.window-titlebar .buttons button:hover {
+    background-color: #fff;
+}
+
+.window-content {
+    background-color: #FFF;
+    border: 1px solid #808080;
+    height: calc(100% - 22px); /* Adjust based on titlebar height */
+    overflow: auto;
+    padding: 10px;
+}
+
+.cheater-page {
+    z-index: 1;
+    opacity: 1;
+}
+
+.protected-page,
+.loading-screen,
+.main-menu,
+.desktop,
+.os-loading-screen {
+    z-index: -1;
+    opacity: 0;
+}
+
+.foreground {
+    z-index: 10;
+    opacity: 1;
+}
+
+.background {
+    z-index: 1;
+    opacity: 0;
+}
+
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-screen .loading-text {
+    font-size: 24px;
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-menu .menu-item {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #0A246A;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.main-menu .menu-item:hover {
+    background-color: #1C3D7A;
+}
+
+.desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.discordapp.com/attachments/1304549304081318009/1324025933488853022/https3A2F2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.png?ex=6776a6bd&is=6775553d&hm=59ee1d3079ded8dee2862408a4349b3b9b8603208c25c1a9598da29f211aa442') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.taskbar {
+    background-color: #0A246A;
+    color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    width: calc(100% - 20px);  /* Adjust width to account for the left offset */
+    position: fixed;
+    bottom: 0;
+    left: 0px;  /* Move 20px to the left */
+}
+
+.start-button {
+    background-color: #1C3D7A;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: #0A246A;
+}
+
+.time {
+    font-size: 16px;
+}
+
+.os-loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    font-size: 24px;
+}
+
+.folder {
+    width: 64px;
+    height: 64px;
+    background: url('https://cdn.discordapp.com/attachments/1262089753793138748/1324027945341292708/01a0fc73ccf559c20dd0a67b2b3550c2f0efa4d7.png?ex=6776a89d&is=6775571d&hm=7dcd4e9a85ebbf8669421aa1366d4ee6c3dd2e97bd871c97ca670b6b7856032a&') no-repeat center center;
+    background-size: contain;
+    margin: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.folder-label {
+    text-align: center;
+    color: white;
+    margin-top: 5px;
+    font-size: 12px;  /* Smaller font size */
+}
+
+.file {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.file-size {
+    float: right;
+    color: gray;
+}
+
+#folderWindow, #notepadWindow {
+    display: none;
+    width: 600px;
+    height: 400px;
+    top: 100px;
+    left: 100px;
+    z-index: 100;
+}
+
+#bsodWindow {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #0000AA;
+    color: #0000AA;
+    text-align: center;
+    padding: 50px;
+}
+
+#bsodWindow .window-content h1 {
+    font-size: 100px;
+    margin: 0;
+}
+
+#bsodWindow .window-content p {
+    font-size: 20px;
+}
