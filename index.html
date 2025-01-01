@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Redirect Protected Page</title>
     <style>
         body {
             display: flex;
@@ -16,8 +16,8 @@
         }
         .message {
             font-size: 24px;
-            color: #ff0000;
-            border: 2px solid #ff0000;
+            color: #333;
+            border: 2px solid #333;
             padding: 20px;
             border-radius: 10px;
             background-color: #ffffff;
@@ -25,6 +25,36 @@
     </style>
 </head>
 <body>
-    <div class="message">cheater, don't ruin the fun for others!</div>
+    <div class="message" id="message">Checking access...</div>
+    <script>
+        const allowedReferrer = 'https://tyamh.github.io/adminloginpaeg/';
+
+        if (document.referrer === allowedReferrer) {
+            document.getElementById('message').innerText = 'Welcome to the protected page!';
+        } else {
+            document.getElementById('message').innerText = "cheater, don't ruin the fun for others!";
+        }
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'p' || e.key === 'f' || e.key === 'a')) || 
+                (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'j' || e.key === 'c')) || 
+                (e.key === 'F12')) {
+                e.preventDefault();
+            }
+        });
+
+        const threshold = 160;
+        setInterval(() => {
+            const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+            const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+            if (widthThreshold || heightThreshold) {
+                window.location.href = 'https://tyamh.github.io/Cheater'; 
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
